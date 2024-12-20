@@ -1,0 +1,133 @@
+1.a
+m1 = int(input("Enter marks for test1 : "))
+m2 = int(input("Enter marks for test2 : "))
+m3 = int(input("Enter marks for test3 : "))
+best_of_two = sorted([m1, m2, m3], reverse=True)[:2]
+average_best_of_two = sum(best_of_two)/2
+
+b. 
+num = input("Enter a value : ")
+if num == num[::-1]:
+ print("Palindrome")
+else:
+ print("Not Palindrome")
+for i in range(10):
+ if num.count(str(i)) > 0:
+ print(f'{str(i)} appears {num.count(str(i))} times')
+
+
+
+2 a. 
+def fn(n):
+if n <= 2:
+  return n – 1
+else:
+  return fn(n-1) + fn(n-2)
+try:
+num = int(input("Enter a number : ")) 
+if num > 0:
+  print(f' fn({num}) = {fn(num)}')
+else:
+  print("Input should be greater than 0")
+except ValueError:
+print("Try with numeric value")
+
+b. 
+def bin2Dec(val):
+return int(val, 2)
+def oct2Hex(val):
+dval=int(val, 8)
+ return hex(dval)
+try:
+num1 = input("Enter a binary number : ") 
+print(bin2Dec(num1))
+except ValueError:
+print("Invalid literal in input with base 2")
+try:
+num2 = input("Enter a octal number : ")
+print(oct2Hex(num2))
+except ValueError:
+print("Invalid literal in input with base 8")
+
+
+
+3a.
+
+import string
+sentence = input("Enter a sentence : ")
+wordList = sentence.strip().split(" ")
+print(f'This sentence has {len(wordList)} words', end='\n\n')
+ digit_count = uppercase_count = lowercase_count = 0
+for character in sentence:
+ if character in string.digits: 
+  digit_count += 1
+ elif character in string.ascii_uppercase: 
+  uppercase_count += 1
+ elif character in string.ascii_lowercase:
+  lowercase_count += 1
+print(f'This sentence has {digit_count} digits', f' {uppercase_count} 
+upper case letters', f' {lowercase_count} lower case letters', sep='\n')
+
+b.
+ from difflib import SequenceMatcher
+str1 = input("Enter String 1 : ")
+str2 = input("Enter String 2 : ") 
+sim = SequenceMatcher(None, str1, str2).ratio()
+print("Similarity between strings \"" + str1 + "\" and \"" + str2 + "\" 
+is : ",sim)
+
+
+4a. 
+import matplotlib.pyplot as plt
+# Sample data for demonstration
+categories = ['0-10', '10-20', '20-30', '30-40', 
+'40-50’]
+values = [55, 48, 25, 68, 90]
+# Create a bar plot
+plt.bar(categories, values, color='skyblue’)
+# Add labels and title
+plt.xlabel('Overs’)
+plt.ylabel('Runs’)
+plt.title('Bar Plot Showing Runs scored in an ODI 
+Match’)
+# Display the plot
+plt.show()
+
+Another Instance
+import matplotlib.pyplot as plt
+import numpy as np
+# Sample data for demonstration
+categories = ['0-10', '10-20', '20-30', '30-40', '40-50’]
+values1 = [55, 48, 25, 68, 90]
+values2 = [65, 38, 35, 58, 80]
+width=0.4
+p=np.arange(len(categories))
+p1=[j+width for j in p]
+plt.xlabel('Overs', fontsize=15)
+plt.ylabel('Runs', fontsize=15)
+
+4b.
+import matplotlib.pyplot as plt
+day=[1, 2 , 3 , 4 , 5, 6]
+num=[48, 12, 28, 38, 20, 36]
+plt.xlabel('Days', fontsize=15)
+plt.ylabel('Number of cases', fontsize=15)
+plt.title('Number of cases repored', fontsize=15)
+plt.scatter(day, num, s=250, color=['g', 'b', 'r', 'm', 'b', 'g'])
+plt.show()
+
+
+
+
+5.
+# case 1)
+import matplotlib.pyplot as plt
+#%matplotlib inline
+age_men = [25,11,68,18,27,28,15,43,58,63,43,65,51,36,33,26,23,35,49,58]
+plt.hist(age_men, bins=6)
+plt.show()
+
+# case 2)
+bins =[10,20,30,40,50,60,70]
+plt.hist(age_men, bins=bins, edgecolor='r', )
+plt.show()
