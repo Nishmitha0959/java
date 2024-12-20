@@ -1,0 +1,41 @@
+6)  a) Linear plotting usng matplotlib
+
+import matplotlib.pyplot as plt
+overs=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+runs_scored=[0,7,12,20,39,49,61,83,86,97,113,116,123,137,145,163,172,192,198,198,203]
+plt.plot(overs,runs_scored)
+plt.xlabel('overs')
+plt.ylabel('Runs Scoring in an T20 Cricket Match')
+plt.grid(True)
+plt.sow()
+
+
+
+
+6)  b)  Linear plotting usng matplotlib
+
+
+overs=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+runs_scored=[0,7,12,20,39,49,61,83,86,97,113,116,123,137,145,163,172,192,198,198,203]
+
+
+
+
+#create a linear plot 
+plt.plot(overs,runs_scored,marker='x',linestyle='dased',color='red',linewidth=2,markerfacecolor='blue',markersize=8)
+plt.xlabel('overs',color='green')
+plt.ylabel('Runs scored')
+plt.title('Runs scoring in an T20 Cricket Match')
+plt.grid(True)
+plt.show()
+
+
+7.
+import numpy as np import matplotlib.pyplot as plt import seaborn as sns
+def sinplot(n=10): x = np.linspace(0, 14, 100) for i in range(1, n + 1): plt.plot(x, np.sin(x + i * .5) * (n + 2 - i))
+sns.set_theme()
+#sns.set_context("talk") sns.set_context("notebook", font_scale=1.5, rc={"lines.linewidth": 2.5})
+sinplot()
+plt.title('Seaborn plots with Aesthetic functions') plt.show()
+
+
